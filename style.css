@@ -4,6 +4,13 @@ h1 {
 	font-family: 'Oswald', sans-serif;
 	margin: 0 auto;
 	text-align: center;
+	position: relative;
+}
+
+button {
+	margin: 0 auto;
+	display: inherit;
+	margin-bottom: 10px;
 }
 
 .container {
@@ -11,7 +18,7 @@ h1 {
 	margin: 0 auto;
 }
 
-.game {
+.board {
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -27,22 +34,31 @@ h1 {
 	float: left;
 }
 
+.highlight {
+    background: -webkit-radial-gradient(circle, white, transparent); /* For Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(circle, white, transparent); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, white, transparent); /* For Fx 3.6 to 15 */
+    background: radial-gradient(circle, white, transparent); /* Standard syntax (must be last) */
+}
+
 #red {
-	background-color: red;
+	background-color: rgba(255,0,0,1);
 	border-top-left-radius: 50px; 
 }
 
 #green {
-	background-color: green;
+	background-color: rgba(0,255,0,1);
 	border-bottom-left-radius: 50px;
 }
 
 #blue {
-	background-color: blue;
+	background-color: rgba(0,0,255,1);
 	border-bottom-right-radius: 50px;
 }
 
 #yellow {
-	background-color: yellow;
+	background-color: rgba(255,255,0,1);
 	border-top-right-radius: 50px;
 }
+
+
