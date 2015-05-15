@@ -1,25 +1,32 @@
 var simon = function(){
 	var $corner = $(".corner")
 
-	
-
 	var play = function() {
 		$("button").addClass("invisble");
 		var userOrder =[];
 		var gameOrder = [];
 		
 		var decide = function (gameOrder, userOrder) {
+			console.log(userOrder[userOrder.length-1]);
+			console.log(gameOrder[gameOrder.length-1])
 			if(gameOrder.length != userOrder.length) {
-				return false;
-			}
-			for(var i = 0; i < userOrder.length; i++) {
-				if(gameOrder.length > userOrder.length){
+				if(userOrder[userOrder.length-1] != gameOrder[userOrder.length-1]){
+					console.log("they are false");
+					window.alert("you lose!");
 					return false;
 				}
+				else {
+					return false;
+				}
+			}
+			for(var i = 0; i < userOrder.length; i++) {
 				if (gameOrder[i] != userOrder[i]) {
 					console.log("they are false");
 					window.alert("you lose!");
 					return false;
+				}
+				else {
+					console.log(i);
 				}
 			}
 			userOrder = [];
