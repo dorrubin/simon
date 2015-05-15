@@ -1,26 +1,32 @@
-// var board = document.querySelector(".board")
-
 var simon = function(){
+	var $corner = $(".corner")
+	
 
 	var play = function() {
-		$("button").slideUp();
+		$("button").addClass("invisble");
 		var gameOrder = [];
-		var userOrder = [];
-
-		var decide = function() {
-			while (userOrder.length === gameOrder.length) {
-				for(var i = 0; userOrder.length; i++) {
-					if (gameOrder[i] === userOrder[i]) {
-						console.log("they are the same");
-						generateColor();
-						return true;
-					}
-					else {
-						console.log("they are false");
-						return false;
-					}
+		var userOrder =[];
+		
+		var decide = function (gameOrder, userOrder) {
+			console.log(gameOrder.length);
+			console.log(userOrder.length);
+			if(gameOrder.length != userOrder.length) {
+				return false;
+			}
+			for(var i = 0; i < userOrder.length; i++) {
+				if(gameOrder.length > userOrder.length){
+					return false;
+				}
+				if (gameOrder[i] != userOrder[i]) {
+					console.log("they are false");
+					window.alert("you lose!");
+					return false;
 				}
 			}
+			userOrder = [];
+			setTimeout(generateColor, 2000);
+			console.log(gameOrder.length);
+			console.log(userOrder.length);
 		};
 
 		var generateColor = function() {
@@ -30,7 +36,7 @@ var simon = function(){
 					color = red;
 				}
 				else if(number < 0.5) {
-					color = yellow;
+					color = orange
 				}
 				else if (number < 0.75) {
 					color = green;
@@ -39,16 +45,28 @@ var simon = function(){
 					color = blue;
 				}
 			gameOrder.push(color.id);
+			for(var j = 0; j<gameOrder.length; j++) {
+				$("#" + gameOrder[j]).addClass("highlight");
+					setTimeout(function(){
+						$($corner).removeClass("highlight");
+					},500);
+			}
 			console.log(gameOrder);
+			userOrder = [];
+			console.log(userOrder);
 		};
 		
 		generateColor();
 		
 		
 		$(".corner").on("click", function(){
-			$(this).addTemporaryClass("highlight", 250);
+			$(this).addClass("highlight");
+			setTimeout(function(){
+				$($corner).removeClass("highlight");
+			},500);
 			userOrder.push(($(this).context.id).toString());
-			decide();
+				console.log(userOrder);
+				decide(gameOrder, userOrder);
 		});
 	
 	};
@@ -59,24 +77,3 @@ var simon = function(){
 };
 
 simon();
-
-
-
-//JQuery Plug-In for addTemporaryClass
-(function($){
-
-    $.fn.extend({ 
-
-        addTemporaryClass: function(className, duration) {
-            var elements = this;
-            setTimeout(function() {
-                elements.removeClass(className);
-            }, duration);
-
-            return this.each(function() {
-                $(this).addClass(className);
-            });
-        }
-    });
-
-})(jQuery);
