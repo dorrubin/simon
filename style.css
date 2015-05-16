@@ -1,9 +1,9 @@
-/*@import url(http://fonts.googleapis.com/css?family=Oswald);*/
+@import url(http://fonts.googleapis.com/css?family=Oswald);
 
 body {
 	background-color: #eee;
 }
-h1 {
+h1, h3, button {
 	font-family: 'Oswald', Helvetica, sans-serif;
 	margin: 0 auto;
 	text-align: center;
@@ -11,14 +11,16 @@ h1 {
 }
 
 button {
-	margin: 0 auto;
+	margin: 10px auto;
 	display: inherit;
-	margin-bottom: 10px;
+	width: 75px;
+	color: black;
 }
 
 .container {
 	width: 520px;
 	margin: 0 auto;
+	padding-bottom: 10px
 }
 
 .board {
@@ -35,6 +37,7 @@ button {
 
 .column {
 	float: left;
+	margin-bottom: 20px;
 }
 
 .highlight {
