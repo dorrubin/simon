@@ -4,14 +4,18 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Simóna Dice</title>
-	<link rel="stylesheet" href="style.css">
-	<script type="text/javascript" src="jquery-2.1.4.js"></script>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div class="container">
 		<h1>Simón Dice</h1>
 		<h3 id="round">Round: 0</h3>
-		<button id="start">Start</button>
+		<button class="start">Start</button>
+		<select class="start">
+		  <option class="language" value="spanish">Spanish</option>
+		  <option class="language" value="english">English</option>
+		  <option class="language" value="french">French</option>
+		</select>
 		<div class="board">
 			<div class="column">
 				<div class= "corner" id="red"></div>
@@ -22,10 +26,9 @@
 				<div class= "corner" id ="blue"></div>
 			</div>
 		</div>
-		<div class="high-score">
-			<ul></ul>
-		</div>
 	</div>
-	<script type="text/javascript" src="simon.js"></script>
+	<!-- JavaScript -->
+	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="js/simon.js"></script>
 </body>
 </html>

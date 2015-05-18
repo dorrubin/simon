@@ -10,7 +10,11 @@ h1, h3, button {
 	position: relative;
 }
 
-button {
+.language {
+	font-family: 'Oswald', Helvetica, sans-serif;
+}
+
+.start {
 	margin: 10px auto;
 	display: inherit;
 	width: 75px;
