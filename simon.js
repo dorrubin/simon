@@ -1,5 +1,5 @@
 var simon = function(){
-	var $corner = $(".corner")
+	var $corner = $(".corner");
 	var board = document.querySelector(".board");
 
 	var play = function() {
@@ -11,11 +11,11 @@ var simon = function(){
 		var sounds = function (color) {
 				var a = new Audio("sounds/" + color + ".mp3");
 				a.play();
-		}
+		};
 
 		var reset = function() {
 			window.alert("Incorrect! You made it to round " + gameOrder.length + ". Play again?");
-			location.reload();	
+			location.reload();
 		};
 
 		var decide = function (gameOrder, userOrder) {
@@ -30,8 +30,8 @@ var simon = function(){
 			}
 			for(var i = 0; i < userOrder.length; i++) {
 				if (gameOrder[i] != userOrder[i]) {
-					return false;
 					reset();
+					return false;
 				}
 				else {
 					console.log(i);
@@ -55,7 +55,7 @@ var simon = function(){
 					}, n * 1000);
 				})(j);
 			}
-		}
+		};
 
 		var generateColor = function() {
 			var color ="";
@@ -64,7 +64,7 @@ var simon = function(){
 					color = red;
 				}
 				else if(number < 0.5) {
-					color = orange
+					color = orange;
 				}
 				else if (number < 0.75) {
 					color = green;
@@ -75,7 +75,7 @@ var simon = function(){
 			gameOrder.push(color.id);
 			display();
 			userOrder = [];
-			$("#round").text("Round: " + gameOrder.length)
+			$("#round").text("Round: " + gameOrder.length);
 		};
 		
 		generateColor();
