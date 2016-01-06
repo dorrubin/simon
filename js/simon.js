@@ -5,7 +5,6 @@ var simon = function(){
 
 	var play = function() {
 		$(".start").addClass("invisble");
-		$("#timer").removeClass("invisble");
 		var userOrder =[];
 		var gameOrder = [];
 		
