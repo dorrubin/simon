@@ -1,6 +1,5 @@
 var simon = function(){
 	var $corner = $(".corner")
-	var board = document.querySelector(".board");
 
 	var play = function() {
 		$("button").addClass("invisble");
